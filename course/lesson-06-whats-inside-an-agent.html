@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 6: What&#x27;s Inside an Agent: The Agent Brief · HumAIn</title>
+<meta name="description" content="Design an agent on one page before you build anything: goal, instructions, tools, context, limits, and a truth test.">
+<meta name="theme-color" content="#0f1b3d">
+<meta property="og:title" content="Lesson 6: What&#x27;s Inside an Agent: The Agent Brief · HumAIn"><meta property="og:description" content="Design an agent on one page before you build anything: goal, instructions, tools, context, limits, and a truth test."><meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1b3d'/%3E%3Crect x='12' y='16' width='40' height='30' rx='10' fill='%23fff'/%3E%3Ccircle cx='24' cy='30' r='4' fill='%230f1b3d'/%3E%3Ccircle cx='40' cy='30' r='4' fill='%230f1b3d'/%3E%3Crect x='29' y='6' width='6' height='10' rx='3' fill='%23ffb800'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/config.js"></script>
+<script>(function(){var d=document.documentElement,c=window.HUMAIN_CONFIG||{};d.classList.add('js');try{if(localStorage.getItem(c.STORAGE_KEY||'humain_subscribed_v1')==='1'||!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}catch(e){if(!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../index.html" aria-label="HumAIn home"><svg viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false"><rect x="30" y="3" width="4" height="9" rx="2" fill="#ffb800"/><circle cx="32" cy="4" r="3.5" fill="#ffb800"/><rect x="9" y="14" width="46" height="36" rx="12" fill="#fff"/><rect x="3" y="26" width="6" height="12" rx="3" fill="#ffb800"/><rect x="55" y="26" width="6" height="12" rx="3" fill="#ffb800"/><circle cx="23" cy="31" r="5" fill="#0f1b3d"/><circle cx="41" cy="31" r="5" fill="#0f1b3d"/><circle cx="24.5" cy="29.5" r="1.6" fill="#fff"/><circle cx="42.5" cy="29.5" r="1.6" fill="#fff"/><path d="M23 41c3 3.5 15 3.5 18 0" stroke="#0f1b3d" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="20" y="52" width="24" height="9" rx="3" fill="#ffb800"/></svg><span>Hum<b>AI</b>n</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav id="site-nav" class="nav" aria-label="Main">
+    <a href="../index.html">Home</a>
+    <a href="../agents.html">Agent Library</a>
+    <a href="../prompts.html">Prompt Library</a>
+    <a href="../course.html" aria-current="page">Free Course</a>
+    <a href="../about.html">About</a>
+    <a class="cta" href="../course.html#join">Join free</a>
+  </nav>
+</div></header>
+<main id="main">
+
+<div class="wrap narrow">
+  <p class="crumbs"><a href="../course.html">Free Course</a> › Lesson 6 of 11</p>
+  <div class="lesson-meta"><span class="tag">Part 3 · Agents</span><span class="tag amber">~15 min</span></div>
+  <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">6. What&#x27;s Inside an Agent: The Agent Brief</h1>
+  <p class="lead">Design an agent on one page before you build anything: goal, instructions, tools, context, limits, and a truth test.</p>
+  <div class="gate" data-gate-panel>
+  <span class="gate-lock">🔒 Free lesson, quick sign-up needed</span>
+  <h2 style="margin-top:.2rem">Sign up to read this lesson</h2>
+  <p>This lesson is free. Sign up with your email to unlock the whole course, and we'll bring you back to this page.</p>
+  <form class="signup" data-signup data-unlock="1" novalidate aria-labelledby="gate-h">
+  <h3 id="gate-h">Sign up to unlock</h3>
+  <p>Tick the box, then enter your email.</p>
+  <label class="consent"><input type="checkbox" id="gate-consent" data-consent>
+    <span>Yes, I agree to receive emails from <strong>HumAIn</strong> about the free course, new videos, and new agents and prompts. I can withdraw my consent and unsubscribe at any time using the link in every email.</span></label>
+  <div class="embed-slot" data-embed hidden aria-live="polite"></div>
+  <div class="privacy-note">
+    <p><strong>Privacy &amp; consent (Canada, CASL).</strong> Ticking the box is your choice, but we can only send you the course emails if you do. It is never pre-ticked. Emails are sent by <span data-cfg="SENDER_NAME">HumAIn</span>, <span data-cfg="SENDER_MAILING_ADDRESS">2572 boul. Daniel-Johnson, 2nd floor, office 237, Laval, QC H7T 2R3, Canada</span>, contact: <span data-cfg="SENDER_CONTACT_EMAIL">ian-remi.lafleur@neotechcloudsolutions.com</span>.</p>
+    <p>Your email address is stored by our email provider, beehiiv. This website itself uses no cookies or analytics; it only saves a small “signed up” flag and your lesson progress in your own browser. We don't sell your data. <a href="../privacy.html">Read the privacy note</a>.</p>
+  </div>
+</form>
+  <p class="small muted" style="margin-top:.8rem">Already on the list? <button type="button" class="linkbtn" data-already>Unlock on this device</button></p>
+</div>
+  <p id="copy-status" class="status" role="status" aria-live="polite"></p>
+  <article class="lesson" data-gated>
+    
+    
+<p><strong>You'll leave with:</strong> a one-page <em>Agent Brief</em> you can paste into any AI tool. Writing it first saves hours of rebuilding.</p>
+
+<h2>Why a brief first?</h2>
+<p>Most “bad agents” are bad briefs: a vague goal, no limits, and no way to tell when it's wrong. A page of planning fixes most of that. It uses the same ideas from Lesson 2 (role, context, task, format, constraints) but adds three things an agent needs: <strong>tools</strong>, <strong>limits</strong>, and a <strong>truth test</strong>.</p>
+
+<h2>The six boxes of an Agent Brief</h2>
+<div class="table-wrap"><table><thead><tr><th>Box</th><th>Question</th><th>Example (Dinner Planner)</th></tr></thead><tbody>
+<tr><td>1. Goal</td><td>What does “done” look like?</td><td>A dinner for 4, a grocery list, and a total I can verify, under $40.</td></tr>
+<tr><td>2. Instructions</td><td>What steps and style should it follow?</td><td>Ask 4 questions first. Build a table. Re-add the total twice.</td></tr>
+<tr><td>3. Tools</td><td>What can it do besides write?</td><td>None needed to start (copy and paste). Optional: web search for prices.</td></tr>
+<tr><td>4. Context</td><td>What does it need to know each time?</td><td>People, budget, diet, time available, my usual store.</td></tr>
+<tr><td>5. Limits</td><td>What must it never do, or ask first?</td><td>Never buy, never log in to a store, label every estimate.</td></tr>
+<tr><td>6. Truth test</td><td>How will <em>I</em> know the output is right?</td><td>I add the column myself and spot-check two prices.</td></tr>
+</tbody></table></div>
+
+<h3>Tools: start with none</h3>
+<p>Each tool you add (web search, files, email, spreadsheets) is a new way for the agent to be helpful, and a new way for it to go wrong. Start with <strong>no tools</strong>: you copy and paste. Add one tool at a time, only when the copy-paste version works reliably. The principle is “least access”: the agent gets only what it needs for the job.</p>
+
+<h3>Limits: write the “nevers”</h3>
+<p>Good limits are specific: “Never send an email. Only draft.” “Never enter payment details.” “Ask me before doing anything that costs money or can't be undone.” Put them in the instructions <em>and</em> keep them in your own habits: don't connect accounts you wouldn't hand to an intern.</p>
+
+<h3>Truth test: how you'll catch mistakes</h3>
+<p>Choose the check <em>before</em> the first run. Sums: add them yourself. Dates: check the calendar. Quotes: open the source. If you can't think of a way to check the result, the agent is not ready for that job.</p>
+
+<h2>The Agent Brief template</h2>
+<div class="prompt-wrap"><pre class="prompt" id="pb12" tabindex="0">AGENT BRIEF: [NAME]
+
+1. GOAL: [what &quot;done&quot; looks like, in one sentence]
+2. INSTRUCTIONS:
+   - Step 1: [ask me for ...]
+   - Step 2: [do ...]
+   - Step 3: [check ... and report ...]
+3. TOOLS: [none / web search / files / ...]. Use only these.
+4. CONTEXT I will provide each time: [list]
+5. LIMITS: Never [X]. Ask before [Y]. Label anything you are unsure about as &quot;estimate&quot;.
+6. TRUTH TEST (what the user will check): [e.g. totals, dates, sources]
+7. OUTPUT FORMAT: [table / bullets / email draft], under [N] words.</pre><div class="prompt-actions"><button type="button" class="copy-btn" data-copy-target="pb12">Copy prompt</button><span class="token-est" data-token-for="pb12"></span></div></div>
+
+    <div class="exercise"><h3>Exercise</h3>
+<p>Fill in the Agent Brief for one job you'd like an intern to do. Choose something low-stakes, like a weekly meal plan, a reading summary, or a packing list.</p>
+<ol>
+<li>Write the goal and make sure “done” can be checked.</li>
+<li>List the tools. Delete all but the minimum.</li>
+<li>Write three “nevers”.</li>
+<li>Write the truth test. If you can't, pick a different job.</li>
+</ol>
+<p>Compare yours with the ten ready-made packs in the <a href="../agents.html">Agent Library</a>. Notice how each has role, steps, rules and an output format.</p></div>
+    <div class="takeaways"><h3>Key takeaways</h3><ul><li>An agent brief has six boxes: goal, instructions, tools, context, limits, truth test.</li><li>Start with no tools. Add one at a time.</li><li>Pick your truth test before the first run.</li></ul></div>
+    <p><strong>Related:</strong> <a href="../agents.html">Open the Agent Library</a></p>
+    <div class="sources"><h3>Sources</h3><ul><li><a href="https://openai.com/index/prompt-injections/" rel="noopener">OpenAI: Understanding prompt injections (why least access matters)</a></li></ul><p>Checked November 10, 2026 (Eastern Time). Plans, limits and features change: confirm on the official page.</p></div>
+    <p style="margin-top:1.4rem"><button type="button" class="btn btn-line" data-mark-done="lesson-06-whats-inside-an-agent" aria-pressed="false">Mark lesson as complete</button></p>
+  </article>
+  <div data-gated><div class="lesson-nav"><a class="btn btn-line" href="lesson-05-token-optimization.html">← Token Optimization</a><a class="btn btn-dark" href="lesson-07-build-your-first-agent.html">Next: Build Your First Agent →</a></div></div>
+</div></main>
+<footer class="site-footer"><div class="wrap">
+  <div class="cols">
+    <div><p><strong style="color:#fff;font-size:1.15rem">HumAIn</strong><br>AI explained like a human. A faceless English YouTube channel with free agents, prompts and a free course.</p>
+    <p><a href="https://www.youtube.com/@HumAInExplained" rel="noopener">YouTube: @HumAInExplained</a></p></div>
+    <div><strong style="color:#fff">Explore</strong><ul><li><a href="../index.html">Home</a></li><li><a href="../agents.html">Agent Library</a></li><li><a href="../prompts.html">Prompt Library</a></li><li><a href="../course.html">Free Course</a></li><li><a href="../about.html">About</a></li></ul></div>
+    <div><strong style="color:#fff">Good to know</strong><ul><li><a href="../privacy.html">Privacy &amp; email consent</a></li><li><a href="../course.html#join">Free course sign-up</a></li></ul></div>
+  </div>
+  <p class="legal">HumAIn is independent and not affiliated with or endorsed by OpenAI, Google, Anthropic, Zapier, Make, beehiiv or YouTube. Product names are trademarks of their owners. Plans, prices and limits were checked on November 10, 2026 (Eastern Time) and can change: always confirm on the official page. Nothing here is financial, legal or professional advice.</p>
+</div></footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

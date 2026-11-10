@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 2: How to Prompt Well: The Intern Brief · HumAIn</title>
+<meta name="description" content="The six-part structure (role, context, task, format, examples, constraints), with before/after prompts and exercises.">
+<meta name="theme-color" content="#0f1b3d">
+<meta property="og:title" content="Lesson 2: How to Prompt Well: The Intern Brief · HumAIn"><meta property="og:description" content="The six-part structure (role, context, task, format, examples, constraints), with before/after prompts and exercises."><meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1b3d'/%3E%3Crect x='12' y='16' width='40' height='30' rx='10' fill='%23fff'/%3E%3Ccircle cx='24' cy='30' r='4' fill='%230f1b3d'/%3E%3Ccircle cx='40' cy='30' r='4' fill='%230f1b3d'/%3E%3Crect x='29' y='6' width='6' height='10' rx='3' fill='%23ffb800'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/config.js"></script>
+<script>(function(){var d=document.documentElement,c=window.HUMAIN_CONFIG||{};d.classList.add('js');try{if(localStorage.getItem(c.STORAGE_KEY||'humain_subscribed_v1')==='1'||!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}catch(e){if(!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../index.html" aria-label="HumAIn home"><svg viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false"><rect x="30" y="3" width="4" height="9" rx="2" fill="#ffb800"/><circle cx="32" cy="4" r="3.5" fill="#ffb800"/><rect x="9" y="14" width="46" height="36" rx="12" fill="#fff"/><rect x="3" y="26" width="6" height="12" rx="3" fill="#ffb800"/><rect x="55" y="26" width="6" height="12" rx="3" fill="#ffb800"/><circle cx="23" cy="31" r="5" fill="#0f1b3d"/><circle cx="41" cy="31" r="5" fill="#0f1b3d"/><circle cx="24.5" cy="29.5" r="1.6" fill="#fff"/><circle cx="42.5" cy="29.5" r="1.6" fill="#fff"/><path d="M23 41c3 3.5 15 3.5 18 0" stroke="#0f1b3d" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="20" y="52" width="24" height="9" rx="3" fill="#ffb800"/></svg><span>Hum<b>AI</b>n</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav id="site-nav" class="nav" aria-label="Main">
+    <a href="../index.html">Home</a>
+    <a href="../agents.html">Agent Library</a>
+    <a href="../prompts.html">Prompt Library</a>
+    <a href="../course.html" aria-current="page">Free Course</a>
+    <a href="../about.html">About</a>
+    <a class="cta" href="../course.html#join">Join free</a>
+  </nav>
+</div></header>
+<main id="main">
+
+<div class="wrap narrow">
+  <p class="crumbs"><a href="../course.html">Free Course</a> › Lesson 2 of 11</p>
+  <div class="lesson-meta"><span class="tag">Part 1 · Foundations</span><span class="tag amber">~20 min</span></div>
+  <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">2. How to Prompt Well: The Intern Brief</h1>
+  <p class="lead">The six-part structure (role, context, task, format, examples, constraints), with before/after prompts and exercises.</p>
+  <div class="gate" data-gate-panel>
+  <span class="gate-lock">🔒 Free lesson, quick sign-up needed</span>
+  <h2 style="margin-top:.2rem">Sign up to read this lesson</h2>
+  <p>This lesson is free. Sign up with your email to unlock the whole course, and we'll bring you back to this page.</p>
+  <form class="signup" data-signup data-unlock="1" novalidate aria-labelledby="gate-h">
+  <h3 id="gate-h">Sign up to unlock</h3>
+  <p>Tick the box, then enter your email.</p>
+  <label class="consent"><input type="checkbox" id="gate-consent" data-consent>
+    <span>Yes, I agree to receive emails from <strong>HumAIn</strong> about the free course, new videos, and new agents and prompts. I can withdraw my consent and unsubscribe at any time using the link in every email.</span></label>
+  <div class="embed-slot" data-embed hidden aria-live="polite"></div>
+  <div class="privacy-note">
+    <p><strong>Privacy &amp; consent (Canada, CASL).</strong> Ticking the box is your choice, but we can only send you the course emails if you do. It is never pre-ticked. Emails are sent by <span data-cfg="SENDER_NAME">HumAIn</span>, <span data-cfg="SENDER_MAILING_ADDRESS">2572 boul. Daniel-Johnson, 2nd floor, office 237, Laval, QC H7T 2R3, Canada</span>, contact: <span data-cfg="SENDER_CONTACT_EMAIL">ian-remi.lafleur@neotechcloudsolutions.com</span>.</p>
+    <p>Your email address is stored by our email provider, beehiiv. This website itself uses no cookies or analytics; it only saves a small “signed up” flag and your lesson progress in your own browser. We don't sell your data. <a href="../privacy.html">Read the privacy note</a>.</p>
+  </div>
+</form>
+  <p class="small muted" style="margin-top:.8rem">Already on the list? <button type="button" class="linkbtn" data-already>Unlock on this device</button></p>
+</div>
+  <p id="copy-status" class="status" role="status" aria-live="polite"></p>
+  <article class="lesson" data-gated>
+    
+    
+<p><strong>You'll leave with:</strong> a reusable template for clear prompts and the ability to fix a weak prompt in under two minutes.</p>
+
+<h2>The big idea: brief a smart new intern</h2>
+<p>Anthropic's prompting guide offers a handy test: show your prompt to a colleague with minimal context on the task and ask them to follow it. If they'd be confused, the AI will be too. The model knows a lot about the world but <em>nothing about your situation</em> except what's on the page.</p>
+<p>So don't write a wish. Write a brief. We use six parts, easy to remember as <strong>R-C-T-F-E-C</strong>:</p>
+
+<div class="table-wrap"><table><thead><tr><th>Part</th><th>Question it answers</th><th>Example</th></tr></thead><tbody>
+<tr><td><strong>R</strong>ole</td><td>Who should it act as, and for whom?</td><td>“You are a friendly personal-finance explainer for beginners.”</td></tr>
+<tr><td><strong>C</strong>ontext</td><td>What does it need to know about my situation?</td><td>“I'm planning dinner for 4. Budget $40. No peanuts.”</td></tr>
+<tr><td><strong>T</strong>ask</td><td>What exactly should it do, with a verb?</td><td>“Write a grocery list and total it.”</td></tr>
+<tr><td><strong>F</strong>ormat</td><td>What should the answer look like?</td><td>“A table: item | qty | price. Then a one-line total.”</td></tr>
+<tr><td><strong>E</strong>xamples</td><td>What does a good answer look like?</td><td>One or two sample rows or a sample sentence</td></tr>
+<tr><td><strong>C</strong>onstraints</td><td>What must it avoid, and what are the limits?</td><td>“Under 150 words. If unsure, say so. Don't invent prices.”</td></tr>
+</tbody></table></div>
+
+<div class="callout"><strong>You don't always need all six</strong>For a quick question, task + one constraint is plenty. Use the full brief when the answer matters, when you'll reuse the prompt, or when the first try came back generic.</div>
+
+<h2>Before and after</h2>
+<h3>Weak prompt</h3>
+<div class="prompt-wrap"><pre class="prompt" id="pb2" tabindex="0">Help me with my budget.</pre><div class="prompt-actions"><button type="button" class="copy-btn" data-copy-target="pb2">Copy prompt</button><span class="token-est" data-token-for="pb2"></span></div></div>
+<p>The AI has to guess everything: your income, your goal, the format, how long you want it.</p>
+
+<h3>Strong prompt</h3>
+<div class="prompt-wrap"><pre class="prompt" id="pb3" tabindex="0">Role: You are a friendly personal-finance coach for beginners.
+Context: I earn about [AMOUNT] a month after tax. My fixed costs are [LIST]. I want to save [GOAL] by [DATE].
+Task: Build a simple monthly budget and tell me where I&#x27;m most likely overspending.
+Format: A table with category | amount | % of income, then 3 bullet-point suggestions.
+Example of a row: &quot;Groceries | $400 | 18%&quot;.
+Constraints: Use my numbers only. If you need a number I didn&#x27;t give you, ask. Under 200 words. This is general information, not financial advice.</pre><div class="prompt-actions"><button type="button" class="copy-btn" data-copy-target="pb3">Copy prompt</button><span class="token-est" data-token-for="pb3"></span></div></div>
+
+<h2>Each part, in more detail</h2>
+<h3>Role</h3>
+<p>One sentence is enough. Anthropic's guide notes a role helps focus tone and behaviour, and its 2026 prompt article warns not to over-constrain it: “helpful assistant” often beats “world-renowned expert who never makes mistakes”. A better role-equivalent is often a <em>perspective</em>: “explain it for someone who has never used a spreadsheet”.</p>
+<h3>Context</h3>
+<p>Give facts, not adjectives. “Small budget” is vague; “$40 for four people” is useful. Put long pasted material in a clearly marked block so the AI can tell your <em>data</em> from your <em>instructions</em>:</p>
+<div class="prompt-wrap"><pre class="prompt" id="pb4" tabindex="0">Using only the text between the &lt;&lt;&lt; and &gt;&gt;&gt; markers, list the 5 key points.
+&lt;&lt;&lt;
+[PASTE TEXT HERE]
+&gt;&gt;&gt;</pre><div class="prompt-actions"><button type="button" class="copy-btn" data-copy-target="pb4">Copy prompt</button><span class="token-est" data-token-for="pb4"></span></div></div>
+<p>Anthropic's guide suggests XML-style tags for complex prompts; its newer article says clear headings and plain language work as well for most cases. Pick a style and stay consistent.</p>
+<h3>Task</h3>
+<p>Lead with an action verb: write, compare, list, rewrite, check. One main task per prompt. If you need three outputs, number them.</p>
+<h3>Format</h3>
+<p>Say it: table, bullet list, 3 sentences, email with subject line, JSON. Ask for a length. This also helps with tokens (Lesson 5): shorter answers cost less time and usage.</p>
+<h3>Examples</h3>
+<p>Examples are one of the most reliable ways to steer format, tone and structure, according to Anthropic's guide, which suggests relevant, varied examples (it recommends 3-5 for best results on complex formats). For everyday prompts, one good example is often enough. Show the <em>shape</em> you want, and say “match this style, not these exact words”.</p>
+<h3>Constraints</h3>
+<p>This is where you stop the AI from being confidently wrong: “Don't invent sources.” “If you aren't sure, say 'I'm not sure'.” “Don't use jargon.” “Ask me up to 3 questions before you start if something is missing.” That last one is the cheapest quality boost there is.</p>
+
+<h2>The reusable template</h2>
+<div class="prompt-wrap"><pre class="prompt" id="pb5" tabindex="0">Role: You are [ROLE] helping [WHO].
+Context: [FACTS ABOUT MY SITUATION: numbers, constraints, what I already tried].
+Task: [ACTION VERB] [WHAT].
+Format: [TABLE / BULLETS / N SENTENCES / EMAIL], under [N] words.
+Example (match the style, not the words): [ONE SAMPLE].
+Constraints: [WHAT TO AVOID]. If you&#x27;re unsure, say so. If anything is missing, ask me up to 3 questions first.</pre><div class="prompt-actions"><button type="button" class="copy-btn" data-copy-target="pb5">Copy prompt</button><span class="token-est" data-token-for="pb5"></span></div></div>
+
+    <div class="exercise"><h3>Exercise</h3>
+<p><strong>Exercise A: Fix a weak prompt.</strong> Rewrite each of these using the template. Aim for 4 lines or fewer each.</p>
+<ol>
+<li>“Write something about my business.”</li>
+<li>“Explain taxes.”</li>
+<li>“Make a workout plan.”</li>
+</ol>
+<p><strong>Exercise B: Test one part at a time.</strong> Take a prompt you use often. Run it three times: (1) as-is, (2) with a <em>Format</em> added, (3) with a <em>Constraint</em> added. Which change helped most? Write it on a sticky note: that's the part you usually skip.</p>
+<p><strong>Exercise C: Intern test.</strong> Read your best prompt out loud to a friend. Do they ask “what do you mean by…?” Every question they ask is a missing piece of context.</p></div>
+    <div class="takeaways"><h3>Key takeaways</h3><ul><li>Brief the AI like a smart new intern: it only knows what&#x27;s on the page.</li><li>Role, Context, Task, Format, Examples, Constraints. Skip parts you don&#x27;t need, but never skip Task and Constraints on important prompts.</li><li>“Ask me up to 3 questions first” is the cheapest upgrade you can make.</li></ul></div>
+    <p><strong>Related:</strong> <a href="../prompts.html">Browse the Prompt Library</a> · <a href="../agents.html#explain-it-like-a-human-tutor">Try the Explain-It-Like-a-Human Tutor</a></p>
+    <div class="sources"><h3>Sources</h3><ul><li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" rel="noopener">Anthropic docs: Prompting best practices</a></li><li><a href="https://claude.com/resources/articles/best-practices-for-prompt-engineering" rel="noopener">Claude: Prompt engineering best practices for 2026</a></li></ul><p>Checked November 10, 2026 (Eastern Time). Plans, limits and features change: confirm on the official page.</p></div>
+    <p style="margin-top:1.4rem"><button type="button" class="btn btn-line" data-mark-done="lesson-02-how-to-prompt-well" aria-pressed="false">Mark lesson as complete</button></p>
+  </article>
+  <div data-gated><div class="lesson-nav"><a class="btn btn-line" href="lesson-01-what-is-an-ai-agent.html">← What Is an AI Agent?</a><a class="btn btn-dark" href="lesson-03-iterate-and-verify.html">Next: Iterate, Verify, and Keep What Works →</a></div></div>
+</div></main>
+<footer class="site-footer"><div class="wrap">
+  <div class="cols">
+    <div><p><strong style="color:#fff;font-size:1.15rem">HumAIn</strong><br>AI explained like a human. A faceless English YouTube channel with free agents, prompts and a free course.</p>
+    <p><a href="https://www.youtube.com/@HumAInExplained" rel="noopener">YouTube: @HumAInExplained</a></p></div>
+    <div><strong style="color:#fff">Explore</strong><ul><li><a href="../index.html">Home</a></li><li><a href="../agents.html">Agent Library</a></li><li><a href="../prompts.html">Prompt Library</a></li><li><a href="../course.html">Free Course</a></li><li><a href="../about.html">About</a></li></ul></div>
+    <div><strong style="color:#fff">Good to know</strong><ul><li><a href="../privacy.html">Privacy &amp; email consent</a></li><li><a href="../course.html#join">Free course sign-up</a></li></ul></div>
+  </div>
+  <p class="legal">HumAIn is independent and not affiliated with or endorsed by OpenAI, Google, Anthropic, Zapier, Make, beehiiv or YouTube. Product names are trademarks of their owners. Plans, prices and limits were checked on November 10, 2026 (Eastern Time) and can change: always confirm on the official page. Nothing here is financial, legal or professional advice.</p>
+</div></footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

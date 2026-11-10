@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 1: What Is an AI Agent? · HumAIn</title>
+<meta name="description" content="Chatbot vs agent, the Goal → Plan → Act → Check loop, and why your agent is a robot intern, not a genius.">
+<meta name="theme-color" content="#0f1b3d">
+<meta property="og:title" content="Lesson 1: What Is an AI Agent? · HumAIn"><meta property="og:description" content="Chatbot vs agent, the Goal → Plan → Act → Check loop, and why your agent is a robot intern, not a genius."><meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1b3d'/%3E%3Crect x='12' y='16' width='40' height='30' rx='10' fill='%23fff'/%3E%3Ccircle cx='24' cy='30' r='4' fill='%230f1b3d'/%3E%3Ccircle cx='40' cy='30' r='4' fill='%230f1b3d'/%3E%3Crect x='29' y='6' width='6' height='10' rx='3' fill='%23ffb800'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/config.js"></script>
+<script>(function(){var d=document.documentElement,c=window.HUMAIN_CONFIG||{};d.classList.add('js');try{if(localStorage.getItem(c.STORAGE_KEY||'humain_subscribed_v1')==='1'||!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}catch(e){if(!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../index.html" aria-label="HumAIn home"><svg viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false"><rect x="30" y="3" width="4" height="9" rx="2" fill="#ffb800"/><circle cx="32" cy="4" r="3.5" fill="#ffb800"/><rect x="9" y="14" width="46" height="36" rx="12" fill="#fff"/><rect x="3" y="26" width="6" height="12" rx="3" fill="#ffb800"/><rect x="55" y="26" width="6" height="12" rx="3" fill="#ffb800"/><circle cx="23" cy="31" r="5" fill="#0f1b3d"/><circle cx="41" cy="31" r="5" fill="#0f1b3d"/><circle cx="24.5" cy="29.5" r="1.6" fill="#fff"/><circle cx="42.5" cy="29.5" r="1.6" fill="#fff"/><path d="M23 41c3 3.5 15 3.5 18 0" stroke="#0f1b3d" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="20" y="52" width="24" height="9" rx="3" fill="#ffb800"/></svg><span>Hum<b>AI</b>n</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav id="site-nav" class="nav" aria-label="Main">
+    <a href="../index.html">Home</a>
+    <a href="../agents.html">Agent Library</a>
+    <a href="../prompts.html">Prompt Library</a>
+    <a href="../course.html" aria-current="page">Free Course</a>
+    <a href="../about.html">About</a>
+    <a class="cta" href="../course.html#join">Join free</a>
+  </nav>
+</div></header>
+<main id="main">
+
+<div class="wrap narrow">
+  <p class="crumbs"><a href="../course.html">Free Course</a> › Lesson 1 of 11</p>
+  <div class="lesson-meta"><span class="tag">Part 1 · Foundations</span><span class="tag amber">~10 min</span></div>
+  <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">1. What Is an AI Agent?</h1>
+  <p class="lead">Chatbot vs agent, the Goal → Plan → Act → Check loop, and why your agent is a robot intern, not a genius.</p>
+  <div class="gate" data-gate-panel>
+  <span class="gate-lock">🔒 Free lesson, quick sign-up needed</span>
+  <h2 style="margin-top:.2rem">Sign up to read this lesson</h2>
+  <p>This lesson is free. Sign up with your email to unlock the whole course, and we'll bring you back to this page.</p>
+  <form class="signup" data-signup data-unlock="1" novalidate aria-labelledby="gate-h">
+  <h3 id="gate-h">Sign up to unlock</h3>
+  <p>Tick the box, then enter your email.</p>
+  <label class="consent"><input type="checkbox" id="gate-consent" data-consent>
+    <span>Yes, I agree to receive emails from <strong>HumAIn</strong> about the free course, new videos, and new agents and prompts. I can withdraw my consent and unsubscribe at any time using the link in every email.</span></label>
+  <div class="embed-slot" data-embed hidden aria-live="polite"></div>
+  <div class="privacy-note">
+    <p><strong>Privacy &amp; consent (Canada, CASL).</strong> Ticking the box is your choice, but we can only send you the course emails if you do. It is never pre-ticked. Emails are sent by <span data-cfg="SENDER_NAME">HumAIn</span>, <span data-cfg="SENDER_MAILING_ADDRESS">2572 boul. Daniel-Johnson, 2nd floor, office 237, Laval, QC H7T 2R3, Canada</span>, contact: <span data-cfg="SENDER_CONTACT_EMAIL">ian-remi.lafleur@neotechcloudsolutions.com</span>.</p>
+    <p>Your email address is stored by our email provider, beehiiv. This website itself uses no cookies or analytics; it only saves a small “signed up” flag and your lesson progress in your own browser. We don't sell your data. <a href="../privacy.html">Read the privacy note</a>.</p>
+  </div>
+</form>
+  <p class="small muted" style="margin-top:.8rem">Already on the list? <button type="button" class="linkbtn" data-already>Unlock on this device</button></p>
+</div>
+  <p id="copy-status" class="status" role="status" aria-live="polite"></p>
+  <article class="lesson" data-gated>
+    <div class="callout blue"><strong>Watch</strong><a href="https://youtu.be/zDjmsVvPKis" rel="noopener">I Let ChatGPT Plan a $40 Dinner, Then Checked Its Math</a> (YouTube)</div>
+    
+<p><strong>You'll leave with:</strong> a one-page “agent loop” for a task you really do, and your first copy-paste prompt.</p>
+
+<h2>Chatbot vs agent: the intern test</h2>
+<p>A <strong>chatbot</strong> answers. You ask “what should I cook?”, it replies, and the conversation waits for you.</p>
+<p>An <strong>agent</strong> works toward a goal. You say “plan a dinner for four under $40 and give me a grocery list I can check”, and it breaks that into steps, does them, checks the result, and keeps going until the job is done (or it gets stuck and tells you).</p>
+<p>At HumAIn we say an agent is a <strong>robot intern</strong>: fast, tireless, eager to help, and perfectly capable of confidently doing something slightly wrong. You wouldn't hand a new intern your credit card on day one. You'd give them a clear task, check their work, and widen their trust over time. Same rules here.</p>
+
+<h2>The agent loop</h2>
+<p>Almost every agent, from a simple prompt to a fancy product, repeats the same four moves:</p>
+<ol>
+  <li><strong>Goal:</strong> what “done” looks like.</li>
+  <li><strong>Plan:</strong> the steps it intends to take.</li>
+  <li><strong>Act:</strong> do a step (write something, search, calculate, fill in a spreadsheet).</li>
+  <li><strong>Check:</strong> compare the result with the goal. If it isn't there yet, go back to Plan.</li>
+</ol>
+<div class="callout blue"><strong>Why the “check” step matters most</strong>An agent that never checks is just a chatbot that talks longer. In our $40 dinner video, the interesting part wasn't the recipe: it was checking whether the numbers matched.</div>
+
+<h2>What makes an agent more than a prompt?</h2>
+<table><thead><tr><th>Piece</th><th>In plain words</th><th>Example</th></tr></thead><tbody>
+<tr><td>Instructions</td><td>The standing rules for how it works</td><td>“Always show your maths. Label estimates.”</td></tr>
+<tr><td>Tools</td><td>Things it can <em>do</em> besides talk</td><td>Search the web, read a file, add a spreadsheet row</td></tr>
+<tr><td>Context</td><td>What it knows right now</td><td>Your budget, your diet, last week's plan</td></tr>
+<tr><td>Limits</td><td>What it must not do, or must ask first</td><td>“Never buy anything. Ask before sending.”</td></tr>
+</tbody></table>
+<p>Many “agents” you will meet are really a well-written set of instructions plus a few tools. That's good news: <em>you can build the instructions part today, for free, by writing a prompt.</em></p>
+
+<h2>Your first agent-style prompt</h2>
+<p>Copy this into any chat. It gives a plain chatbot an agent's habits: plan first, show the work, check at the end.</p>
+<div class="prompt-wrap"><pre class="prompt" id="pb1" tabindex="0">Act as a careful planning assistant. My goal: [DESCRIBE THE GOAL, e.g. &quot;plan a dinner for 4 under $40&quot;].
+
+Work in this loop:
+1. PLAN: list the steps you will take (max 5).
+2. ACT: do the steps and show your work.
+3. CHECK: verify the result against my goal. If something doesn&#x27;t fit, fix it and say what you changed.
+4. REPORT: give the final answer, then list what you are least sure about.
+
+If you need information from me, ask before guessing. Don&#x27;t claim to have done something you can&#x27;t do (like buying or sending).</pre><div class="prompt-actions"><button type="button" class="copy-btn" data-copy-target="pb1">Copy prompt</button><span class="token-est" data-token-for="pb1"></span></div></div>
+
+    <div class="exercise"><h3>Exercise</h3>
+<p>Pick a small task you do every week (packing for a trip, a weekly grocery plan, answering the same type of email).</p>
+<ol>
+<li>Write its <strong>Goal</strong> in one sentence, including what “done” looks like.</li>
+<li>List the <strong>Plan</strong> steps you do yourself.</li>
+<li>Circle the steps an intern could <strong>Act</strong> on, and the ones you must keep (money, private data, final decisions).</li>
+<li>Write what you'd <strong>Check</strong> before trusting the result.</li>
+</ol>
+<p>Then run the prompt above on that goal and compare its plan with yours. What did it miss? What did it do better?</p></div>
+    <div class="takeaways"><h3>Key takeaways</h3><ul><li>A chatbot answers; an agent works toward a goal in a loop: Goal → Plan → Act → Check.</li><li>Agents are robot interns: useful, fast, and in need of supervision.</li><li>The check step is where trust is earned.</li></ul></div>
+    <p><strong>Related:</strong> <a href="../agents.html#dinner-planner">Try the Dinner Planner agent</a></p>
+    
+    <p style="margin-top:1.4rem"><button type="button" class="btn btn-line" data-mark-done="lesson-01-what-is-an-ai-agent" aria-pressed="false">Mark lesson as complete</button></p>
+  </article>
+  <div data-gated><div class="lesson-nav"><a class="btn btn-line" href="../course.html">← Course overview</a><a class="btn btn-dark" href="lesson-02-how-to-prompt-well.html">Next: How to Prompt Well →</a></div></div>
+</div></main>
+<footer class="site-footer"><div class="wrap">
+  <div class="cols">
+    <div><p><strong style="color:#fff;font-size:1.15rem">HumAIn</strong><br>AI explained like a human. A faceless English YouTube channel with free agents, prompts and a free course.</p>
+    <p><a href="https://www.youtube.com/@HumAInExplained" rel="noopener">YouTube: @HumAInExplained</a></p></div>
+    <div><strong style="color:#fff">Explore</strong><ul><li><a href="../index.html">Home</a></li><li><a href="../agents.html">Agent Library</a></li><li><a href="../prompts.html">Prompt Library</a></li><li><a href="../course.html">Free Course</a></li><li><a href="../about.html">About</a></li></ul></div>
+    <div><strong style="color:#fff">Good to know</strong><ul><li><a href="../privacy.html">Privacy &amp; email consent</a></li><li><a href="../course.html#join">Free course sign-up</a></li></ul></div>
+  </div>
+  <p class="legal">HumAIn is independent and not affiliated with or endorsed by OpenAI, Google, Anthropic, Zapier, Make, beehiiv or YouTube. Product names are trademarks of their owners. Plans, prices and limits were checked on November 10, 2026 (Eastern Time) and can change: always confirm on the official page. Nothing here is financial, legal or professional advice.</p>
+</div></footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

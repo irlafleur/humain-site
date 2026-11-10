@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 4: Tokens and Context Windows, Explained · HumAIn</title>
+<meta name="description" content="What tokens are, how to estimate them, what a context window holds, and why AI “forgets” in long chats.">
+<meta name="theme-color" content="#0f1b3d">
+<meta property="og:title" content="Lesson 4: Tokens and Context Windows, Explained · HumAIn"><meta property="og:description" content="What tokens are, how to estimate them, what a context window holds, and why AI “forgets” in long chats."><meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1b3d'/%3E%3Crect x='12' y='16' width='40' height='30' rx='10' fill='%23fff'/%3E%3Ccircle cx='24' cy='30' r='4' fill='%230f1b3d'/%3E%3Ccircle cx='40' cy='30' r='4' fill='%230f1b3d'/%3E%3Crect x='29' y='6' width='6' height='10' rx='3' fill='%23ffb800'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/config.js"></script>
+<script>(function(){var d=document.documentElement,c=window.HUMAIN_CONFIG||{};d.classList.add('js');try{if(localStorage.getItem(c.STORAGE_KEY||'humain_subscribed_v1')==='1'||!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}catch(e){if(!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../index.html" aria-label="HumAIn home"><svg viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false"><rect x="30" y="3" width="4" height="9" rx="2" fill="#ffb800"/><circle cx="32" cy="4" r="3.5" fill="#ffb800"/><rect x="9" y="14" width="46" height="36" rx="12" fill="#fff"/><rect x="3" y="26" width="6" height="12" rx="3" fill="#ffb800"/><rect x="55" y="26" width="6" height="12" rx="3" fill="#ffb800"/><circle cx="23" cy="31" r="5" fill="#0f1b3d"/><circle cx="41" cy="31" r="5" fill="#0f1b3d"/><circle cx="24.5" cy="29.5" r="1.6" fill="#fff"/><circle cx="42.5" cy="29.5" r="1.6" fill="#fff"/><path d="M23 41c3 3.5 15 3.5 18 0" stroke="#0f1b3d" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="20" y="52" width="24" height="9" rx="3" fill="#ffb800"/></svg><span>Hum<b>AI</b>n</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav id="site-nav" class="nav" aria-label="Main">
+    <a href="../index.html">Home</a>
+    <a href="../agents.html">Agent Library</a>
+    <a href="../prompts.html">Prompt Library</a>
+    <a href="../course.html" aria-current="page">Free Course</a>
+    <a href="../about.html">About</a>
+    <a class="cta" href="../course.html#join">Join free</a>
+  </nav>
+</div></header>
+<main id="main">
+
+<div class="wrap narrow">
+  <p class="crumbs"><a href="../course.html">Free Course</a> › Lesson 4 of 11</p>
+  <div class="lesson-meta"><span class="tag">Part 2 · Tokens</span><span class="tag amber">~15 min</span></div>
+  <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">4. Tokens and Context Windows, Explained</h1>
+  <p class="lead">What tokens are, how to estimate them, what a context window holds, and why AI “forgets” in long chats.</p>
+  <div class="gate" data-gate-panel>
+  <span class="gate-lock">🔒 Free lesson, quick sign-up needed</span>
+  <h2 style="margin-top:.2rem">Sign up to read this lesson</h2>
+  <p>This lesson is free. Sign up with your email to unlock the whole course, and we'll bring you back to this page.</p>
+  <form class="signup" data-signup data-unlock="1" novalidate aria-labelledby="gate-h">
+  <h3 id="gate-h">Sign up to unlock</h3>
+  <p>Tick the box, then enter your email.</p>
+  <label class="consent"><input type="checkbox" id="gate-consent" data-consent>
+    <span>Yes, I agree to receive emails from <strong>HumAIn</strong> about the free course, new videos, and new agents and prompts. I can withdraw my consent and unsubscribe at any time using the link in every email.</span></label>
+  <div class="embed-slot" data-embed hidden aria-live="polite"></div>
+  <div class="privacy-note">
+    <p><strong>Privacy &amp; consent (Canada, CASL).</strong> Ticking the box is your choice, but we can only send you the course emails if you do. It is never pre-ticked. Emails are sent by <span data-cfg="SENDER_NAME">HumAIn</span>, <span data-cfg="SENDER_MAILING_ADDRESS">2572 boul. Daniel-Johnson, 2nd floor, office 237, Laval, QC H7T 2R3, Canada</span>, contact: <span data-cfg="SENDER_CONTACT_EMAIL">ian-remi.lafleur@neotechcloudsolutions.com</span>.</p>
+    <p>Your email address is stored by our email provider, beehiiv. This website itself uses no cookies or analytics; it only saves a small “signed up” flag and your lesson progress in your own browser. We don't sell your data. <a href="../privacy.html">Read the privacy note</a>.</p>
+  </div>
+</form>
+  <p class="small muted" style="margin-top:.8rem">Already on the list? <button type="button" class="linkbtn" data-already>Unlock on this device</button></p>
+</div>
+  <p id="copy-status" class="status" role="status" aria-live="polite"></p>
+  <article class="lesson" data-gated>
+    
+    
+<p><strong>You'll leave with:</strong> a mental model of tokens and context windows, and a quick way to estimate how big your prompt is.</p>
+
+<h2>What is a token?</h2>
+<p>AI models don't read letters or words the way you do. They split text into small pieces called <strong>tokens</strong>. OpenAI's help center describes tokens as the building blocks of text its models process: they can be as short as one character or as long as a whole word, and spaces, punctuation and partial words all count.</p>
+<p>Handy rules of thumb for English, from OpenAI's help center:</p>
+<ul>
+<li>1 token ≈ 4 characters</li>
+<li>1 token ≈ ¾ of a word, so 100 tokens ≈ 75 words</li>
+<li>1-2 sentences ≈ 30 tokens</li>
+<li>1 paragraph ≈ 100 tokens</li>
+<li>about 1,500 words ≈ 2,048 tokens</li>
+</ul>
+<div class="callout"><strong>Rules of thumb, not exact counts</strong>Different models split text differently, and other languages or code can behave differently. For an exact count on OpenAI models you can paste text into OpenAI's free Tokenizer tool. Other providers have their own counters.</div>
+
+<h3>Quick maths you can do in your head</h3>
+<p>Count characters (or words) and divide: <strong>characters ÷ 4 ≈ tokens</strong>. A 2,000-character prompt is about 500 tokens. A 600-word article is about 800 tokens.</p>
+
+<h2>Input, output, and thinking tokens</h2>
+<p>Usage is tracked in a few categories. OpenAI's help center lists:</p>
+<ul>
+<li><strong>Input tokens:</strong> everything you send.</li>
+<li><strong>Output tokens:</strong> everything the model writes back.</li>
+<li><strong>Cached tokens:</strong> reused tokens from earlier in the conversation, often billed at a reduced rate (this matters mostly if you use an API).</li>
+<li><strong>Reasoning tokens:</strong> on some advanced models, extra “thinking steps” that happen before the final answer.</li>
+</ul>
+<p>Both input and output count toward limits. OpenAI's developer docs also note that for some models, input and output tokens are priced differently.</p>
+
+<h2>What is a context window?</h2>
+<p>The <strong>context window</strong> is everything the model can look at when it answers: the text it can “see” <em>right now</em>. Anthropic's documentation describes it as the model's working memory, and it includes your instructions, the whole conversation so far, any documents you pasted, tool results, and the model's own answer being written.</p>
+<p>Think of a desk. Your desk has a fixed size. Everything on it, your notes, the papers you pasted, the model's previous replies, takes space. Once the desk is full, something has to come off.</p>
+<p>Sizes vary by model and keep growing. Anthropic's docs list some current models with context windows up to 1 million tokens, but that's not the same for every model or every plan. Check the provider's page.</p>
+
+<h3>Why bigger doesn't mean “paste everything”</h3>
+<p>Anthropic's docs warn that more context isn't automatically better: as token count grows, accuracy and recall can degrade, a phenomenon they call <em>context rot</em>. Their research article describes context as a finite resource with diminishing returns: the model has an “attention budget”, and every extra token uses some of it. So curating what's in context matters just as much as how much room you have.</p>
+
+<h3>Why AI “forgets” in a long chat</h3>
+<ul>
+<li>The chat grew past the window, and older messages were dropped or summarized.</li>
+<li>Important details were buried among lots of other text.</li>
+<li>A new chat starts with an empty desk. The model doesn't remember your previous chat unless the app has a memory feature or you re-supply the info (Projects and skills are for this: Lesson 8).</li>
+</ul>
+<div class="callout blue"><strong>Practical rule</strong>If a long conversation starts getting vague or contradicting itself, don't argue with it. Ask for a short summary, then start a fresh chat with that summary pasted in. Lesson 5 shows how.</div>
+
+    <div class="exercise"><h3>Exercise</h3>
+<p><strong>Exercise A: Estimate by hand.</strong> Take the last prompt you wrote. Count its characters (most text editors show this) and divide by 4. Write down your estimate.</p>
+<p><strong>Exercise B: Check it.</strong> Paste the same text into OpenAI's Tokenizer. How close were you? (It's an OpenAI tokenizer, so expect other providers' counts to differ somewhat.)</p>
+<p><strong>Exercise C: Find your desk.</strong> Open your favorite AI app's help or pricing page and find out, in its own words, what it says about context size or usage limits for <em>your</em> plan. Write down what it says and the date. Don't trust a blog post for this: limits change.</p>
+<p><strong>Exercise D: See the effect.</strong> In a long chat where the AI is getting fuzzy, ask: “Summarize the key facts and decisions so far in 10 bullets.” Start a new chat and paste only that summary. Is the new chat sharper?</p></div>
+    <div class="takeaways"><h3>Key takeaways</h3><ul><li>A token is a piece of text, roughly 4 characters or ¾ of a word in English.</li><li>The context window is the model&#x27;s working memory: everything it can see right now, including its own answer.</li><li>More context isn&#x27;t always better: keep what&#x27;s relevant.</li></ul></div>
+    <p><strong>Related:</strong> <a href="../prompts.html">Prompt Library: each prompt shows a rough token estimate</a></p>
+    <div class="sources"><h3>Sources</h3><ul><li><a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them" rel="noopener">OpenAI Help Center: What are tokens and how to count them?</a></li><li><a href="https://platform.openai.com/tokenizer" rel="noopener">OpenAI Tokenizer (try your own text)</a></li><li><a href="https://platform.claude.com/docs/en/build-with-claude/context-windows" rel="noopener">Anthropic docs: Context windows</a></li><li><a href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents" rel="noopener">Anthropic: Effective context engineering for AI agents</a></li><li><a href="https://developers.openai.com/api/docs/guides/advanced-usage" rel="noopener">OpenAI API docs: Advanced usage (managing tokens)</a></li></ul><p>Checked November 10, 2026 (Eastern Time). Plans, limits and features change: confirm on the official page.</p></div>
+    <p style="margin-top:1.4rem"><button type="button" class="btn btn-line" data-mark-done="lesson-04-tokens-and-context-windows" aria-pressed="false">Mark lesson as complete</button></p>
+  </article>
+  <div data-gated><div class="lesson-nav"><a class="btn btn-line" href="lesson-03-iterate-and-verify.html">← Iterate, Verify, and Keep What Works</a><a class="btn btn-dark" href="lesson-05-token-optimization.html">Next: Token Optimization →</a></div></div>
+</div></main>
+<footer class="site-footer"><div class="wrap">
+  <div class="cols">
+    <div><p><strong style="color:#fff;font-size:1.15rem">HumAIn</strong><br>AI explained like a human. A faceless English YouTube channel with free agents, prompts and a free course.</p>
+    <p><a href="https://www.youtube.com/@HumAInExplained" rel="noopener">YouTube: @HumAInExplained</a></p></div>
+    <div><strong style="color:#fff">Explore</strong><ul><li><a href="../index.html">Home</a></li><li><a href="../agents.html">Agent Library</a></li><li><a href="../prompts.html">Prompt Library</a></li><li><a href="../course.html">Free Course</a></li><li><a href="../about.html">About</a></li></ul></div>
+    <div><strong style="color:#fff">Good to know</strong><ul><li><a href="../privacy.html">Privacy &amp; email consent</a></li><li><a href="../course.html#join">Free course sign-up</a></li></ul></div>
+  </div>
+  <p class="legal">HumAIn is independent and not affiliated with or endorsed by OpenAI, Google, Anthropic, Zapier, Make, beehiiv or YouTube. Product names are trademarks of their owners. Plans, prices and limits were checked on November 10, 2026 (Eastern Time) and can change: always confirm on the official page. Nothing here is financial, legal or professional advice.</p>
+</div></footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

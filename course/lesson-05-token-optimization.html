@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 5: Token Optimization: Shorter, Cheaper, Sharper · HumAIn</title>
+<meta name="description" content="Eight habits to keep prompts short, reuse and summarize context, and understand cost and usage limits, without making answers worse.">
+<meta name="theme-color" content="#0f1b3d">
+<meta property="og:title" content="Lesson 5: Token Optimization: Shorter, Cheaper, Sharper · HumAIn"><meta property="og:description" content="Eight habits to keep prompts short, reuse and summarize context, and understand cost and usage limits, without making answers worse."><meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1b3d'/%3E%3Crect x='12' y='16' width='40' height='30' rx='10' fill='%23fff'/%3E%3Ccircle cx='24' cy='30' r='4' fill='%230f1b3d'/%3E%3Ccircle cx='40' cy='30' r='4' fill='%230f1b3d'/%3E%3Crect x='29' y='6' width='6' height='10' rx='3' fill='%23ffb800'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/config.js"></script>
+<script>(function(){var d=document.documentElement,c=window.HUMAIN_CONFIG||{};d.classList.add('js');try{if(localStorage.getItem(c.STORAGE_KEY||'humain_subscribed_v1')==='1'||!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}catch(e){if(!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../index.html" aria-label="HumAIn home"><svg viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false"><rect x="30" y="3" width="4" height="9" rx="2" fill="#ffb800"/><circle cx="32" cy="4" r="3.5" fill="#ffb800"/><rect x="9" y="14" width="46" height="36" rx="12" fill="#fff"/><rect x="3" y="26" width="6" height="12" rx="3" fill="#ffb800"/><rect x="55" y="26" width="6" height="12" rx="3" fill="#ffb800"/><circle cx="23" cy="31" r="5" fill="#0f1b3d"/><circle cx="41" cy="31" r="5" fill="#0f1b3d"/><circle cx="24.5" cy="29.5" r="1.6" fill="#fff"/><circle cx="42.5" cy="29.5" r="1.6" fill="#fff"/><path d="M23 41c3 3.5 15 3.5 18 0" stroke="#0f1b3d" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="20" y="52" width="24" height="9" rx="3" fill="#ffb800"/></svg><span>Hum<b>AI</b>n</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav id="site-nav" class="nav" aria-label="Main">
+    <a href="../index.html">Home</a>
+    <a href="../agents.html">Agent Library</a>
+    <a href="../prompts.html">Prompt Library</a>
+    <a href="../course.html" aria-current="page">Free Course</a>
+    <a href="../about.html">About</a>
+    <a class="cta" href="../course.html#join">Join free</a>
+  </nav>
+</div></header>
+<main id="main">
+
+<div class="wrap narrow">
+  <p class="crumbs"><a href="../course.html">Free Course</a> › Lesson 5 of 11</p>
+  <div class="lesson-meta"><span class="tag">Part 2 · Tokens</span><span class="tag amber">~20 min</span></div>
+  <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">5. Token Optimization: Shorter, Cheaper, Sharper</h1>
+  <p class="lead">Eight habits to keep prompts short, reuse and summarize context, and understand cost and usage limits, without making answers worse.</p>
+  <div class="gate" data-gate-panel>
+  <span class="gate-lock">🔒 Free lesson, quick sign-up needed</span>
+  <h2 style="margin-top:.2rem">Sign up to read this lesson</h2>
+  <p>This lesson is free. Sign up with your email to unlock the whole course, and we'll bring you back to this page.</p>
+  <form class="signup" data-signup data-unlock="1" novalidate aria-labelledby="gate-h">
+  <h3 id="gate-h">Sign up to unlock</h3>
+  <p>Tick the box, then enter your email.</p>
+  <label class="consent"><input type="checkbox" id="gate-consent" data-consent>
+    <span>Yes, I agree to receive emails from <strong>HumAIn</strong> about the free course, new videos, and new agents and prompts. I can withdraw my consent and unsubscribe at any time using the link in every email.</span></label>
+  <div class="embed-slot" data-embed hidden aria-live="polite"></div>
+  <div class="privacy-note">
+    <p><strong>Privacy &amp; consent (Canada, CASL).</strong> Ticking the box is your choice, but we can only send you the course emails if you do. It is never pre-ticked. Emails are sent by <span data-cfg="SENDER_NAME">HumAIn</span>, <span data-cfg="SENDER_MAILING_ADDRESS">2572 boul. Daniel-Johnson, 2nd floor, office 237, Laval, QC H7T 2R3, Canada</span>, contact: <span data-cfg="SENDER_CONTACT_EMAIL">ian-remi.lafleur@neotechcloudsolutions.com</span>.</p>
+    <p>Your email address is stored by our email provider, beehiiv. This website itself uses no cookies or analytics; it only saves a small “signed up” flag and your lesson progress in your own browser. We don't sell your data. <a href="../privacy.html">Read the privacy note</a>.</p>
+  </div>
+</form>
+  <p class="small muted" style="margin-top:.8rem">Already on the list? <button type="button" class="linkbtn" data-already>Unlock on this device</button></p>
+</div>
+  <p id="copy-status" class="status" role="status" aria-live="polite"></p>
+  <article class="lesson" data-gated>
+    
+    
+<p><strong>You'll leave with:</strong> eight habits that cut waste, a “summarize and restart” prompt, and a way to work out costs from any price page.</p>
+
+<h2>Why bother?</h2>
+<ul>
+<li><strong>Quality:</strong> focused context gives sharper answers (Lesson 4).</li>
+<li><strong>Limits:</strong> chat plans have usage limits that depend on the provider and plan, and they can change. Shorter work goes further.</li>
+<li><strong>Cost:</strong> if you ever use an API or build an agent, you're billed per token (OpenAI's docs: you pay per token, and both input and output tokens count).</li>
+<li><strong>Speed:</strong> OpenAI's docs also note that writing more tokens takes more time.</li>
+</ul>
+<p>The goal is <em>not</em> to write tiny prompts. It's to remove words that don't help.</p>
+
+<h2>Eight habits</h2>
+<h3>1. Say it once, say it plainly</h3>
+<p>Cut greetings, apologies, and repeated instructions. “Hi! I hope you're well. I was wondering if you could possibly…” becomes “Summarize this in 5 bullets.”</p>
+<table><thead><tr><th>Wordy</th><th>Tight</th></tr></thead><tbody>
+<tr><td>“I would really appreciate it if you could please help me write a short email to my landlord about the broken heater, and make it polite but firm.”</td><td>“Write a polite but firm 80-word email to my landlord about a broken heater.”</td></tr>
+</tbody></table>
+
+<h3>2. Paste only what's needed</h3>
+<p>Need a summary of section 3? Paste section 3, not the whole 40-page document. Remove signatures, email chains, and boilerplate before pasting. (Also good for privacy.)</p>
+
+<h3>3. Set the output length</h3>
+<p>Output tokens add up, and for some models they are priced differently from input. Ask for “under 150 words”, “5 bullets”, or “table only, no intro”.</p>
+
+<h3>4. Don't re-send what's already in the chat</h3>
+<p>In one conversation, the AI already sees earlier messages. Refer to them (“use the table above”) instead of pasting them again.</p>
+
+<h3>5. Put the standing instructions in one place</h3>
+<p>If you retype the same 300-word instruction every day, save it as a Project instruction or a skill (Lesson 8). You'll stop retyping it, and it stays consistent. (Saved instructions still count toward the model's context when they're used. This saves your time and prevents drift, not the tokens themselves.)</p>
+
+<h3>6. Summarize and restart</h3>
+<p>Long chats pile up tokens and “context rot”. When a chat gets heavy, compress it and start fresh:</p>
+<div class="prompt-wrap"><pre class="prompt" id="pb11" tabindex="0">Summarize this conversation so I can continue in a new chat. Include: (1) my goal, (2) decisions made, (3) key facts and numbers, (4) what&#x27;s still open, (5) any format or style rules I asked for. Under 200 words. Don&#x27;t add anything that wasn&#x27;t said.</pre><div class="prompt-actions"><button type="button" class="copy-btn" data-copy-target="pb11">Copy prompt</button><span class="token-est" data-token-for="pb11"></span></div></div>
+<p>Then open a new chat and begin with: “Context from a previous chat: [PASTE SUMMARY]. Next, I want to…”. Read the summary first. If it's wrong, fix it before you paste.</p>
+
+<h3>7. Match the model to the job</h3>
+<p>Many providers offer smaller, faster options alongside larger ones. For simple reformatting or classification, a smaller model is often enough. For hard reasoning, use the stronger one. Check your provider's current model list and pricing page. We don't name models here because they change often.</p>
+
+<h3>8. Be careful with “thinking” modes</h3>
+<p>OpenAI's help center notes that on some advanced models, reasoning tokens are extra “thinking steps” included before the final answer. If a model has a thinking or reasoning mode, it may use more of your limit. Turn it on for hard problems, off for easy ones.</p>
+
+<h2>Cost and limits, step by step</h2>
+<h3>Chat plans (free or subscription)</h3>
+<p>You usually don't pay per token. You get a usage allowance that varies by plan and by model, and it can change. Look for the provider's plan page, not a blog post. We don't quote numbers here because they go out of date.</p>
+<h3>APIs and agent tools</h3>
+<p>Providers publish prices per million tokens, often with separate prices for input and output. The formula:</p>
+<p><strong>cost = (input tokens × input price + output tokens × output price) ÷ 1,000,000</strong></p>
+<div class="callout"><strong>Made-up example (not real prices)</strong>Suppose a pretend model costs $2 per million input tokens and $10 per million output tokens. A call with 3,000 input tokens and 500 output tokens costs (3,000 × 2 + 500 × 10) ÷ 1,000,000 = (6,000 + 5,000) ÷ 1,000,000 = $0.011, about 1.1 cents. Run it 1,000 times and it's $11. Replace the pretend prices with the real ones from the provider's pricing page.</div>
+<h3>Agents multiply tokens</h3>
+<p>An agent runs a loop (Lesson 1), and each loop step can re-send the instructions and context. A long-running agent can use far more tokens than a single chat message. Set a step limit, keep instructions short, and watch usage when you first run something new.</p>
+<h3>Caching (if you use an API)</h3>
+<p>OpenAI's help center lists “cached tokens” as reused tokens that are often billed at a reduced rate. If you build with an API, keep stable instructions at the start and changing data after them, and read your provider's caching docs for the exact rules.</p>
+
+    <div class="exercise"><h3>Exercise</h3>
+<p><strong>Exercise A: The 30% trim.</strong> Take one of your longest prompts. Cut 30% of the words without removing any fact, number, or constraint. Run both versions. Is the answer any worse?</p>
+<p><strong>Exercise B: Summarize and restart.</strong> Pick a long chat. Use the summarize prompt, read the summary, fix any mistakes, and continue in a fresh chat. Note how many messages it took before the first chat got fuzzy.</p>
+<p><strong>Exercise C: Do the maths.</strong> Find one real API pricing page (your choice). Write down the input and output prices per million tokens and the date. Estimate the tokens of a prompt of yours (characters ÷ 4) and an answer of 300 words (×1.33). Compute the cost with the formula above.</p>
+<p><strong>Exercise D: Limit-proof prompt.</strong> Rewrite your most-used prompt so it asks for a specific length and format. Save it in your prompt log.</p></div>
+    <div class="takeaways"><h3>Key takeaways</h3><ul><li>Remove words that don&#x27;t help; keep facts, numbers, and constraints.</li><li>Paste only the needed section, cap the answer length, and summarize and restart long chats.</li><li>Chat plans have usage allowances; APIs charge per token. Always check the provider&#x27;s current price or plan page.</li></ul></div>
+    <p><strong>Related:</strong> <a href="../agents.html#meeting-notes-to-actions">Meeting Notes to Actions: a good test for long pasted text</a></p>
+    <div class="sources"><h3>Sources</h3><ul><li><a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them" rel="noopener">OpenAI Help Center: What are tokens and how to count them?</a></li><li><a href="https://developers.openai.com/api/docs/guides/advanced-usage" rel="noopener">OpenAI API docs: Advanced usage (managing tokens)</a></li><li><a href="https://platform.claude.com/docs/en/build-with-claude/context-windows" rel="noopener">Anthropic docs: Context windows</a></li><li><a href="https://www.anthropic.com/research/effective-context-engineering-for-ai-agents" rel="noopener">Anthropic: Effective context engineering for AI agents</a></li></ul><p>Checked November 10, 2026 (Eastern Time). Plans, limits and features change: confirm on the official page.</p></div>
+    <p style="margin-top:1.4rem"><button type="button" class="btn btn-line" data-mark-done="lesson-05-token-optimization" aria-pressed="false">Mark lesson as complete</button></p>
+  </article>
+  <div data-gated><div class="lesson-nav"><a class="btn btn-line" href="lesson-04-tokens-and-context-windows.html">← Tokens and Context Windows, Explained</a><a class="btn btn-dark" href="lesson-06-whats-inside-an-agent.html">Next: What&#x27;s Inside an Agent →</a></div></div>
+</div></main>
+<footer class="site-footer"><div class="wrap">
+  <div class="cols">
+    <div><p><strong style="color:#fff;font-size:1.15rem">HumAIn</strong><br>AI explained like a human. A faceless English YouTube channel with free agents, prompts and a free course.</p>
+    <p><a href="https://www.youtube.com/@HumAInExplained" rel="noopener">YouTube: @HumAInExplained</a></p></div>
+    <div><strong style="color:#fff">Explore</strong><ul><li><a href="../index.html">Home</a></li><li><a href="../agents.html">Agent Library</a></li><li><a href="../prompts.html">Prompt Library</a></li><li><a href="../course.html">Free Course</a></li><li><a href="../about.html">About</a></li></ul></div>
+    <div><strong style="color:#fff">Good to know</strong><ul><li><a href="../privacy.html">Privacy &amp; email consent</a></li><li><a href="../course.html#join">Free course sign-up</a></li></ul></div>
+  </div>
+  <p class="legal">HumAIn is independent and not affiliated with or endorsed by OpenAI, Google, Anthropic, Zapier, Make, beehiiv or YouTube. Product names are trademarks of their owners. Plans, prices and limits were checked on November 10, 2026 (Eastern Time) and can change: always confirm on the official page. Nothing here is financial, legal or professional advice.</p>
+</div></footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

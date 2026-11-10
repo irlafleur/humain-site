@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 7: Build Your First Agent: The $40 Dinner Planner · HumAIn</title>
+<meta name="description" content="Build, run, and honestly test a Dinner Planner agent in any free chat. No coding, no purchases.">
+<meta name="theme-color" content="#0f1b3d">
+<meta property="og:title" content="Lesson 7: Build Your First Agent: The $40 Dinner Planner · HumAIn"><meta property="og:description" content="Build, run, and honestly test a Dinner Planner agent in any free chat. No coding, no purchases."><meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1b3d'/%3E%3Crect x='12' y='16' width='40' height='30' rx='10' fill='%23fff'/%3E%3Ccircle cx='24' cy='30' r='4' fill='%230f1b3d'/%3E%3Ccircle cx='40' cy='30' r='4' fill='%230f1b3d'/%3E%3Crect x='29' y='6' width='6' height='10' rx='3' fill='%23ffb800'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/config.js"></script>
+<script>(function(){var d=document.documentElement,c=window.HUMAIN_CONFIG||{};d.classList.add('js');try{if(localStorage.getItem(c.STORAGE_KEY||'humain_subscribed_v1')==='1'||!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}catch(e){if(!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../index.html" aria-label="HumAIn home"><svg viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false"><rect x="30" y="3" width="4" height="9" rx="2" fill="#ffb800"/><circle cx="32" cy="4" r="3.5" fill="#ffb800"/><rect x="9" y="14" width="46" height="36" rx="12" fill="#fff"/><rect x="3" y="26" width="6" height="12" rx="3" fill="#ffb800"/><rect x="55" y="26" width="6" height="12" rx="3" fill="#ffb800"/><circle cx="23" cy="31" r="5" fill="#0f1b3d"/><circle cx="41" cy="31" r="5" fill="#0f1b3d"/><circle cx="24.5" cy="29.5" r="1.6" fill="#fff"/><circle cx="42.5" cy="29.5" r="1.6" fill="#fff"/><path d="M23 41c3 3.5 15 3.5 18 0" stroke="#0f1b3d" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="20" y="52" width="24" height="9" rx="3" fill="#ffb800"/></svg><span>Hum<b>AI</b>n</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav id="site-nav" class="nav" aria-label="Main">
+    <a href="../index.html">Home</a>
+    <a href="../agents.html">Agent Library</a>
+    <a href="../prompts.html">Prompt Library</a>
+    <a href="../course.html" aria-current="page">Free Course</a>
+    <a href="../about.html">About</a>
+    <a class="cta" href="../course.html#join">Join free</a>
+  </nav>
+</div></header>
+<main id="main">
+
+<div class="wrap narrow">
+  <p class="crumbs"><a href="../course.html">Free Course</a> › Lesson 7 of 11</p>
+  <div class="lesson-meta"><span class="tag">Part 3 · Agents</span><span class="tag amber">~25 min</span></div>
+  <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">7. Build Your First Agent: The $40 Dinner Planner</h1>
+  <p class="lead">Build, run, and honestly test a Dinner Planner agent in any free chat. No coding, no purchases.</p>
+  <div class="gate" data-gate-panel>
+  <span class="gate-lock">🔒 Free lesson, quick sign-up needed</span>
+  <h2 style="margin-top:.2rem">Sign up to read this lesson</h2>
+  <p>This lesson is free. Sign up with your email to unlock the whole course, and we'll bring you back to this page.</p>
+  <form class="signup" data-signup data-unlock="1" novalidate aria-labelledby="gate-h">
+  <h3 id="gate-h">Sign up to unlock</h3>
+  <p>Tick the box, then enter your email.</p>
+  <label class="consent"><input type="checkbox" id="gate-consent" data-consent>
+    <span>Yes, I agree to receive emails from <strong>HumAIn</strong> about the free course, new videos, and new agents and prompts. I can withdraw my consent and unsubscribe at any time using the link in every email.</span></label>
+  <div class="embed-slot" data-embed hidden aria-live="polite"></div>
+  <div class="privacy-note">
+    <p><strong>Privacy &amp; consent (Canada, CASL).</strong> Ticking the box is your choice, but we can only send you the course emails if you do. It is never pre-ticked. Emails are sent by <span data-cfg="SENDER_NAME">HumAIn</span>, <span data-cfg="SENDER_MAILING_ADDRESS">2572 boul. Daniel-Johnson, 2nd floor, office 237, Laval, QC H7T 2R3, Canada</span>, contact: <span data-cfg="SENDER_CONTACT_EMAIL">ian-remi.lafleur@neotechcloudsolutions.com</span>.</p>
+    <p>Your email address is stored by our email provider, beehiiv. This website itself uses no cookies or analytics; it only saves a small “signed up” flag and your lesson progress in your own browser. We don't sell your data. <a href="../privacy.html">Read the privacy note</a>.</p>
+  </div>
+</form>
+  <p class="small muted" style="margin-top:.8rem">Already on the list? <button type="button" class="linkbtn" data-already>Unlock on this device</button></p>
+</div>
+  <p id="copy-status" class="status" role="status" aria-live="polite"></p>
+  <article class="lesson" data-gated>
+    <div class="callout blue"><strong>Watch</strong><a href="https://youtu.be/zDjmsVvPKis" rel="noopener">I Let ChatGPT Plan a $40 Dinner, Then Checked Its Math</a> (YouTube)</div>
+    
+<p><strong>You'll leave with:</strong> a working Dinner Planner agent and a written verdict on how far you can trust it.</p>
+
+<h2>Step 1: Paste the agent</h2>
+<p>Open any AI chat. Copy the Dinner Planner pack from the <a href="../agents.html#dinner-planner">Agent Library</a> and paste it as your first message (or into a Project's instructions: see Lesson 8). It follows the Agent Brief from Lesson 6: role, steps, rules, output format.</p>
+
+<h2>Step 2: Give it a real task</h2>
+<p>When the agent asks, answer with something like:</p>
+<div class="prompt-wrap"><pre class="prompt" id="pb13" tabindex="0">4 people, $40 budget, no peanuts, 40 minutes, I shop at [YOUR USUAL STORE].</pre><div class="prompt-actions"><button type="button" class="copy-btn" data-copy-target="pb13">Copy prompt</button><span class="token-est" data-token-for="pb13"></span></div></div>
+<p>It should come back with a recipe, a grocery table with a price and a price source for each line, a total, and a note on what it's least sure about.</p>
+
+<h2>Step 3: Run the truth test</h2>
+<ol>
+<li><strong>Add the column yourself.</strong> Use a calculator. Does your total match the agent's total?</li>
+<li><strong>Spot-check two prices</strong> on the store's own website or app. Are they close? Are they labeled “estimate”?</li>
+<li><strong>Check the recipe against your allergies</strong>: not just the list.</li>
+<li><strong>Check the quantities.</strong> Does “1 lb of chicken” feed four people the way you cook?</li>
+</ol>
+<div class="callout red"><strong>Why we do this</strong>In the HumAIn video, the total ChatGPT displayed didn't match its own list when we added it ourselves. A neat table can still contain a wrong number. That's why the pack tells the agent to re-add and why you do it too.</div>
+
+<h2>Step 4: Make one improvement</h2>
+<p>Use the iteration loop from Lesson 3. Examples of single changes:</p>
+<ul>
+<li>“Show quantities in the units my store uses.”</li>
+<li>“Prefer store-brand items and say so.”</li>
+<li>“Add a second column showing the cost per serving.”</li>
+</ul>
+<p>Re-run, re-check the total.</p>
+
+<h2>Step 5: Write the verdict</h2>
+<p>An agent isn't “good” or “bad”. It's trustworthy for certain jobs under certain checks. Write three lines:</p>
+<table><thead><tr><th>Question</th><th>My answer</th></tr></thead><tbody>
+<tr><td>What did it do well?</td><td></td></tr>
+<tr><td>What did I have to fix?</td><td></td></tr>
+<tr><td>Would I rely on it again, and with what check?</td><td></td></tr>
+</tbody></table>
+
+<div class="callout"><strong>No buying, ever (for now)</strong>The agent plans. You shop. Don't connect a store account or payment method to a beginner agent. In Lesson 11 you'll write the rule down.</div>
+
+    <div class="exercise"><h3>Exercise</h3>
+<p>Run the Dinner Planner for two different situations (for example “4 people, $40” and “2 people, vegetarian, $25”). For each, record:</p>
+<ol>
+<li>The agent's total, and your total.</li>
+<li>How many prices were labeled “estimate”.</li>
+<li>One thing you'd change in the instructions.</li>
+</ol>
+<p>Then update the pack with your change, and save it in your prompt log. That edit is your first real agent upgrade.</p></div>
+    <div class="takeaways"><h3>Key takeaways</h3><ul><li>You can build a useful agent with just instructions: no code and no purchases.</li><li>Always add up the totals yourself. Confident tables can hide wrong sums.</li><li>Write a verdict: trust depends on the job and the check.</li></ul></div>
+    <p><strong>Related:</strong> <a href="../agents.html#dinner-planner">Dinner Planner pack</a></p>
+    
+    <p style="margin-top:1.4rem"><button type="button" class="btn btn-line" data-mark-done="lesson-07-build-your-first-agent" aria-pressed="false">Mark lesson as complete</button></p>
+  </article>
+  <div data-gated><div class="lesson-nav"><a class="btn btn-line" href="lesson-06-whats-inside-an-agent.html">← What&#x27;s Inside an Agent</a><a class="btn btn-dark" href="lesson-08-make-it-reusable.html">Next: Make It Reusable →</a></div></div>
+</div></main>
+<footer class="site-footer"><div class="wrap">
+  <div class="cols">
+    <div><p><strong style="color:#fff;font-size:1.15rem">HumAIn</strong><br>AI explained like a human. A faceless English YouTube channel with free agents, prompts and a free course.</p>
+    <p><a href="https://www.youtube.com/@HumAInExplained" rel="noopener">YouTube: @HumAInExplained</a></p></div>
+    <div><strong style="color:#fff">Explore</strong><ul><li><a href="../index.html">Home</a></li><li><a href="../agents.html">Agent Library</a></li><li><a href="../prompts.html">Prompt Library</a></li><li><a href="../course.html">Free Course</a></li><li><a href="../about.html">About</a></li></ul></div>
+    <div><strong style="color:#fff">Good to know</strong><ul><li><a href="../privacy.html">Privacy &amp; email consent</a></li><li><a href="../course.html#join">Free course sign-up</a></li></ul></div>
+  </div>
+  <p class="legal">HumAIn is independent and not affiliated with or endorsed by OpenAI, Google, Anthropic, Zapier, Make, beehiiv or YouTube. Product names are trademarks of their owners. Plans, prices and limits were checked on November 10, 2026 (Eastern Time) and can change: always confirm on the official page. Nothing here is financial, legal or professional advice.</p>
+</div></footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

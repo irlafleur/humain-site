@@ -1,0 +1,4 @@
+# Not published: generator source and local screenshots
+_src/
+screenshots/
+.DS_Store

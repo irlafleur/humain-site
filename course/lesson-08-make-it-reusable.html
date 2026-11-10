@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 8: Make It Reusable: Projects and Skills · HumAIn</title>
+<meta name="description" content="Save your agent so you stop retyping it, using a ChatGPT Project, a Claude Project, or a Gemini skill. And why we don&#x27;t build on custom GPTs or Gems.">
+<meta name="theme-color" content="#0f1b3d">
+<meta property="og:title" content="Lesson 8: Make It Reusable: Projects and Skills · HumAIn"><meta property="og:description" content="Save your agent so you stop retyping it, using a ChatGPT Project, a Claude Project, or a Gemini skill. And why we don&#x27;t build on custom GPTs or Gems."><meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1b3d'/%3E%3Crect x='12' y='16' width='40' height='30' rx='10' fill='%23fff'/%3E%3Ccircle cx='24' cy='30' r='4' fill='%230f1b3d'/%3E%3Ccircle cx='40' cy='30' r='4' fill='%230f1b3d'/%3E%3Crect x='29' y='6' width='6' height='10' rx='3' fill='%23ffb800'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/config.js"></script>
+<script>(function(){var d=document.documentElement,c=window.HUMAIN_CONFIG||{};d.classList.add('js');try{if(localStorage.getItem(c.STORAGE_KEY||'humain_subscribed_v1')==='1'||!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}catch(e){if(!c.BEEHIIV_EMBED_URL)d.classList.add('unlocked');}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../index.html" aria-label="HumAIn home"><svg viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false"><rect x="30" y="3" width="4" height="9" rx="2" fill="#ffb800"/><circle cx="32" cy="4" r="3.5" fill="#ffb800"/><rect x="9" y="14" width="46" height="36" rx="12" fill="#fff"/><rect x="3" y="26" width="6" height="12" rx="3" fill="#ffb800"/><rect x="55" y="26" width="6" height="12" rx="3" fill="#ffb800"/><circle cx="23" cy="31" r="5" fill="#0f1b3d"/><circle cx="41" cy="31" r="5" fill="#0f1b3d"/><circle cx="24.5" cy="29.5" r="1.6" fill="#fff"/><circle cx="42.5" cy="29.5" r="1.6" fill="#fff"/><path d="M23 41c3 3.5 15 3.5 18 0" stroke="#0f1b3d" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="20" y="52" width="24" height="9" rx="3" fill="#ffb800"/></svg><span>Hum<b>AI</b>n</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav id="site-nav" class="nav" aria-label="Main">
+    <a href="../index.html">Home</a>
+    <a href="../agents.html">Agent Library</a>
+    <a href="../prompts.html">Prompt Library</a>
+    <a href="../course.html" aria-current="page">Free Course</a>
+    <a href="../about.html">About</a>
+    <a class="cta" href="../course.html#join">Join free</a>
+  </nav>
+</div></header>
+<main id="main">
+
+<div class="wrap narrow">
+  <p class="crumbs"><a href="../course.html">Free Course</a> › Lesson 8 of 11</p>
+  <div class="lesson-meta"><span class="tag">Part 3 · Agents</span><span class="tag amber">~20 min</span></div>
+  <h1 style="font-size:clamp(1.8rem,5vw,2.6rem)">8. Make It Reusable: Projects and Skills</h1>
+  <p class="lead">Save your agent so you stop retyping it, using a ChatGPT Project, a Claude Project, or a Gemini skill. And why we don&#x27;t build on custom GPTs or Gems.</p>
+  <div class="gate" data-gate-panel>
+  <span class="gate-lock">🔒 Free lesson, quick sign-up needed</span>
+  <h2 style="margin-top:.2rem">Sign up to read this lesson</h2>
+  <p>This lesson is free. Sign up with your email to unlock the whole course, and we'll bring you back to this page.</p>
+  <form class="signup" data-signup data-unlock="1" novalidate aria-labelledby="gate-h">
+  <h3 id="gate-h">Sign up to unlock</h3>
+  <p>Tick the box, then enter your email.</p>
+  <label class="consent"><input type="checkbox" id="gate-consent" data-consent>
+    <span>Yes, I agree to receive emails from <strong>HumAIn</strong> about the free course, new videos, and new agents and prompts. I can withdraw my consent and unsubscribe at any time using the link in every email.</span></label>
+  <div class="embed-slot" data-embed hidden aria-live="polite"></div>
+  <div class="privacy-note">
+    <p><strong>Privacy &amp; consent (Canada, CASL).</strong> Ticking the box is your choice, but we can only send you the course emails if you do. It is never pre-ticked. Emails are sent by <span data-cfg="SENDER_NAME">HumAIn</span>, <span data-cfg="SENDER_MAILING_ADDRESS">2572 boul. Daniel-Johnson, 2nd floor, office 237, Laval, QC H7T 2R3, Canada</span>, contact: <span data-cfg="SENDER_CONTACT_EMAIL">ian-remi.lafleur@neotechcloudsolutions.com</span>.</p>
+    <p>Your email address is stored by our email provider, beehiiv. This website itself uses no cookies or analytics; it only saves a small “signed up” flag and your lesson progress in your own browser. We don't sell your data. <a href="../privacy.html">Read the privacy note</a>.</p>
+  </div>
+</form>
+  <p class="small muted" style="margin-top:.8rem">Already on the list? <button type="button" class="linkbtn" data-already>Unlock on this device</button></p>
+</div>
+  <p id="copy-status" class="status" role="status" aria-live="polite"></p>
+  <article class="lesson" data-gated>
+    
+    
+<p><strong>You'll leave with:</strong> your agent saved in at least one tool, ready to run with one click.</p>
+
+<div class="notice"><strong>Facts checked on November 10, 2026.</strong> Plans, limits and menu names change often. Treat the links under “Sources” as the final word.</div>
+
+<h2>The problem: retyping and drifting</h2>
+<p>If you paste the same instructions every time, you waste effort, and small edits creep in. The fix is to save the instructions once, then start chats that already have them.</p>
+
+<h2>Option A: a ChatGPT Project</h2>
+<ul>
+<li>OpenAI's help center says Projects keep related chats, files, and instructions together, and that project instructions apply within that project.</li>
+<li>To add instructions: open the project, use the “•••” menu, then Project settings.</li>
+<li>Projects are included with qualifying plans at no extra charge, you can create an unlimited number of them, and the Free plan allows 5 files per project (higher on paid plans). This is as of OpenAI's page when we checked.</li>
+</ul>
+<p><strong>Steps:</strong> New project → name it after your agent → open Project settings → paste the agent pack into the instructions → start a chat inside the project.</p>
+
+<h2>Option B: a Claude Project</h2>
+<ul>
+<li>Claude's help center says projects are self-contained workspaces with their own chat histories and knowledge, and that they're available to all users including free accounts, with a maximum of five projects on a free account.</li>
+<li>You can add project instructions to tailor responses.</li>
+<li>Sharing projects with others is for Team and Enterprise plans, so don't promise “share this with friends” on a personal plan.</li>
+</ul>
+<p><strong>Steps:</strong> Create a project → add the pack to its instructions → add any reference files → start chats in it.</p>
+
+<h2>Option C: a Gemini skill</h2>
+<ul>
+<li>Google says skills are reusable custom instructions. You use one by typing <code>/</code> and its name in any Gemini chat, and they can be stacked.</li>
+<li>Google's Sept 30, 2026 announcement says skills are available to all Google AI subscription tiers, currently for people 18+.</li>
+<li>Gems are being replaced: per Gemini Help, personal accounts 18+ see Gems become read-only on <strong>November 17, 2026</strong>, and Gems are removed on <strong>December 17, 2026</strong>. Google says it will automatically recreate your Gems as skills.</li>
+</ul>
+<p><strong>Steps (from Google's guide):</strong> in Gemini, open Customize Skills → Create → Create manually → add a name, a description (when to use it), and the instructions → Create. Keep the description specific, and add an example of the output you expect.</p>
+
+<h2>Why we don't build on custom GPTs or Gems</h2>
+<ul>
+<li><strong>Custom GPTs:</strong> OpenAI's FAQ says custom GPTs are scheduled to retire on <strong>Dec 11, 2026</strong> (a later date applies to some enterprise workspaces), with migration to plugins that bring reusable instructions, files and connected apps together.</li>
+<li><strong>Gems:</strong> as above, going away in December 2026.</li>
+</ul>
+<p>The durable format is a plain-text <strong>prompt pack</strong> that works anywhere. If a platform changes, you copy the text somewhere else. That's why every agent in our library is a copyable pack.</p>
+
+<h2>Name and describe it well</h2>
+<table><thead><tr><th>Field</th><th>Good</th><th>Weak</th></tr></thead><tbody>
+<tr><td>Name</td><td>Dinner Planner</td><td>Helper 3</td></tr>
+<tr><td>Description (when to use it)</td><td>“Use when I want a dinner plan with a grocery list and a budget.”</td><td>“Food stuff”</td></tr>
+<tr><td>Instructions</td><td>The full pack</td><td>“Be helpful”</td></tr>
+</tbody></table>
+<div class="callout blue"><strong>Token tip</strong>A saved instruction still counts toward the context each time it's used (Lesson 4). Keep packs lean: a 300-word pack is plenty.</div>
+
+    <div class="exercise"><h3>Exercise</h3>
+<p>Save one agent from the Agent Library in a tool you actually use.</p>
+<ol>
+<li>Choose the tool (ChatGPT Project, Claude Project, or Gemini skill).</li>
+<li>Paste the pack, give it a clear name, and write a one-line “when to use” description.</li>
+<li>Run it twice in fresh chats. Does it behave the same?</li>
+<li>Write the date and the tool in your prompt log, so you know where it lives.</li>
+</ol>
+<p><strong>Bonus:</strong> do you have an existing custom GPT or Gem? Copy its instructions into a plain text file today.</p></div>
+    <div class="takeaways"><h3>Key takeaways</h3><ul><li>Save instructions once in a Project or skill instead of retyping.</li><li>Use plain-text prompt packs: they survive platform changes.</li><li>Custom GPTs and Gems are being retired in December 2026.</li></ul></div>
+    <p><strong>Related:</strong> <a href="../agents.html">Pick an agent to save</a></p>
+    <div class="sources"><h3>Sources</h3><ul><li><a href="https://help.openai.com/en/articles/10169521-projects-in-chatgpt" rel="noopener">OpenAI Help Center: Projects in ChatGPT</a></li><li><a href="https://support.claude.com/en/articles/9517075-what-are-projects" rel="noopener">Claude Help Center: What are projects?</a></li><li><a href="https://support.google.com/gemini/answer/18560919" rel="noopener">Gemini Apps Help: About the transition from Gems to skills</a></li><li><a href="https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/" rel="noopener">Google blog: Let skills in Gemini tackle your most repetitive tasks (Sep 30, 2026)</a></li><li><a href="https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq" rel="noopener">OpenAI Help Center: Custom GPT retirement and migration FAQ</a></li></ul><p>Checked November 10, 2026 (Eastern Time). Plans, limits and features change: confirm on the official page.</p></div>
+    <p style="margin-top:1.4rem"><button type="button" class="btn btn-line" data-mark-done="lesson-08-make-it-reusable" aria-pressed="false">Mark lesson as complete</button></p>
+  </article>
+  <div data-gated><div class="lesson-nav"><a class="btn btn-line" href="lesson-07-build-your-first-agent.html">← Build Your First Agent</a><a class="btn btn-dark" href="lesson-09-the-power-of-1-percent.html">Next: The Power of 1% →</a></div></div>
+</div></main>
+<footer class="site-footer"><div class="wrap">
+  <div class="cols">
+    <div><p><strong style="color:#fff;font-size:1.15rem">HumAIn</strong><br>AI explained like a human. A faceless English YouTube channel with free agents, prompts and a free course.</p>
+    <p><a href="https://www.youtube.com/@HumAInExplained" rel="noopener">YouTube: @HumAInExplained</a></p></div>
+    <div><strong style="color:#fff">Explore</strong><ul><li><a href="../index.html">Home</a></li><li><a href="../agents.html">Agent Library</a></li><li><a href="../prompts.html">Prompt Library</a></li><li><a href="../course.html">Free Course</a></li><li><a href="../about.html">About</a></li></ul></div>
+    <div><strong style="color:#fff">Good to know</strong><ul><li><a href="../privacy.html">Privacy &amp; email consent</a></li><li><a href="../course.html#join">Free course sign-up</a></li></ul></div>
+  </div>
+  <p class="legal">HumAIn is independent and not affiliated with or endorsed by OpenAI, Google, Anthropic, Zapier, Make, beehiiv or YouTube. Product names are trademarks of their owners. Plans, prices and limits were checked on November 10, 2026 (Eastern Time) and can change: always confirm on the official page. Nothing here is financial, legal or professional advice.</p>
+</div></footer>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>
