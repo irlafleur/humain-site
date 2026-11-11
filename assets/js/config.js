@@ -21,6 +21,6 @@ window.HUMAIN_CONFIG = {
   SENDER_MAILING_ADDRESS: "2572 boul. Daniel-Johnson, 2nd floor, office 237, Laval, QC H7T 2R3, Canada",
   SENDER_CONTACT_EMAIL: "ian-remi.lafleur@neotechcloudsolutions.com",
 
-  /* localStorage key for the soft gate. Change it to log everybody out. */
+  /* localStorage key for local course progress. Change it to reset everybody. */
   STORAGE_KEY: "humain_subscribed_v1"
 };

@@ -123,13 +123,7 @@ section.block{padding:2.2rem 0}
 .linkbtn{background:none;border:0;color:var(--blue);text-decoration:underline;font:inherit;cursor:pointer;padding:.3rem 0}
 .status{min-height:1.4em;font-weight:600;color:var(--green);font-size:.92rem}
 
-/* gate */
-.gate{max-width:680px;margin:1.5rem 0}
-.gate-lock{font-size:.9rem;font-weight:700;color:#6b4a00;background:#fff1c7;display:inline-block;border-radius:999px;padding:.2rem .8rem;margin-bottom:.6rem}
-html.js [data-gated]{display:none}
-html.js.unlocked [data-gated]{display:block}
-html.js.unlocked [data-gate-panel]{display:none}
-html:not(.js) [data-gate-panel]{display:none}
+/* (sign-up gate removed: basic course is open) */
 html:not(.unlocked) [data-unlocked-only]{display:none}
 
 /* course */

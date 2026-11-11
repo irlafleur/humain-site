@@ -18,9 +18,9 @@
   function isSubscribed() { return store("get", KEY) === "1"; }
   function $all(sel, ctx) { return Array.prototype.slice.call((ctx || doc).querySelectorAll(sel)); }
 
-  /* ---- soft gate state ---- */
+  /* ---- course is open: no sign-up gate ---- */
   var signupReady = !!cfg.BEEHIIV_EMBED_URL;
-  if (isSubscribed() || !signupReady) root.classList.add("unlocked");
+  root.classList.add("unlocked"); /* the basic course is open: no gate */
 
   /* ---- nav toggle ---- */
   var toggle = doc.querySelector(".nav-toggle"), nav = doc.getElementById("site-nav");
