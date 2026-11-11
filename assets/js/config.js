@@ -10,6 +10,12 @@ window.HUMAIN_CONFIG = {
   BEEHIIV_EMBED_URL: "",
   BEEHIIV_EMBED_HEIGHT: 320,
 
+  /* Intermediate Course list (separate from the main newsletter placeholder).
+     Paste ONLY the iframe "src" URL. While this is empty, intermediate.html
+     shows "Sign-up opens soon" and collects no email. */
+  INTERMEDIATE_EMBED_URL: "",
+  INTERMEDIATE_EMBED_HEIGHT: 320,
+
   /* Sender identification shown in the CASL consent text (replace the TODOs). */
   SENDER_NAME: "HumAIn",
   SENDER_MAILING_ADDRESS: "2572 boul. Daniel-Johnson, 2nd floor, office 237, Laval, QC H7T 2R3, Canada",

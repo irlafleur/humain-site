@@ -2,3 +2,6 @@
 _src/
 screenshots/
 .DS_Store
+
+# Local drafts: intermediate email course (not a public site path)
+_email-course/

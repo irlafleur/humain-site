@@ -112,34 +112,41 @@
     var box = form.querySelector("[data-consent]");
     var slot = form.querySelector("[data-embed]");
     var rendered = false;
+    var embedKey = form.getAttribute("data-embed-key") || "BEEHIIV_EMBED_URL";
+    var embedUrl = cfg[embedKey] || "";
+    var formReady = !!embedUrl;
+    var heightKey = embedKey.replace(/_URL$/, "_HEIGHT");
+    var embedHeight = cfg[heightKey] || cfg.BEEHIIV_EMBED_HEIGHT || 320;
+    var soonDefault = "<strong>Sign-up opens soon.</strong><br>" +
+      "The email list isn't open yet, so no address is collected here. The free course is readable in the meantime.";
+    var soonHtml = form.getAttribute("data-soon") || soonDefault;
     form.addEventListener("submit", function (e) { e.preventDefault(); });
     function renderSoon() {
       slot.innerHTML = "";
       var t = doc.createElement("div");
       t.className = "todo-box";
-      t.innerHTML = "<strong>Sign-up opens soon.</strong><br>" +
-        "The email list isn't open yet, so no address is collected here. The free course is readable in the meantime.";
+      t.innerHTML = soonHtml;
       slot.appendChild(t);
       slot.hidden = false;
     }
     function render() {
       slot.innerHTML = "";
-      if (signupReady) {
+      if (formReady) {
         rememberNext();
         var f = doc.createElement("iframe");
-        f.src = cfg.BEEHIIV_EMBED_URL;
+        f.src = embedUrl;
         f.title = "HumAIn email sign-up form";
         f.setAttribute("loading", "lazy");
         f.setAttribute("scrolling", "no");
         f.style.width = "100%"; f.style.border = "0"; f.style.background = "transparent";
-        f.height = String(cfg.BEEHIIV_EMBED_HEIGHT || 320);
+        f.height = String(embedHeight);
         slot.appendChild(f);
       } else {
         renderSoon();
       }
       rendered = true;
     }
-    if (!signupReady && slot) {
+    if (!formReady && slot) {
       renderSoon();
     } else if (box && slot) {
       box.addEventListener("change", function () {
