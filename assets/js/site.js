@@ -220,3 +220,20 @@
     if (v) el.textContent = v;
   });
 })();
+
+/* Anonymous page-view counter: one small beacon per page load, no cookies, no storage, no visitor id.
+   Sends only the page path and the referring website's domain. Skipped for Do Not Track / Global Privacy Control. */
+(function () {
+  "use strict";
+  try {
+    var n = navigator, loc = location;
+    if (loc.hostname !== "humainexplained.com" && loc.hostname !== "www.humainexplained.com") return;
+    if (/^\/(c|api)\//.test(loc.pathname)) return;                         /* private course pages are never counted */
+    if (n.doNotTrack === "1" || window.doNotTrack === "1" || n.globalPrivacyControl === true) return;
+    var ref = "";
+    try { ref = document.referrer ? new URL(document.referrer).hostname : ""; } catch (e) { ref = ""; }
+    var body = JSON.stringify({ path: loc.pathname, ref: ref });
+    if (n.sendBeacon) n.sendBeacon("/api/hit", new Blob([body], { type: "text/plain" }));
+    else if (window.fetch) fetch("/api/hit", { method: "POST", body: body, keepalive: true, credentials: "omit" });
+  } catch (e) { /* never break the page */ }
+})();
