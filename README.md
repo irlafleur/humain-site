@@ -22,6 +22,8 @@ python3 -m http.server 8765      # then open http://localhost:8765/
 | Free Course overview + gate | `course.html` |
 | 11 lessons (gated) | `course/lesson-01-….html` … `lesson-11-….html` |
 | About | `about.html` |
+| Advanced Course teaser (paid, coming soon) | `advanced.html` |
+| Ultimate Course teaser (paid, coming soon) | `ultimate.html` |
 | Privacy & email consent (CASL) | `privacy.html` |
 | Post-sign-up landing page (sets the flag, redirects to the course) | `welcome.html` |
 | Styles / scripts | `assets/css/style.css`, `assets/js/site.js`, `assets/js/config.js` |
